@@ -34,12 +34,7 @@ struct UnionFind {
     }
   }
 
-  bool is_same(int x, int y){
+  bool same(int x, int y){
     return root(x)==root(y);
   }
-
-  int count(int x){
-    return -par[root(x)];
-  }
 };
-
