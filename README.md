@@ -2,4 +2,4 @@
 
  - gcd, lcs
  - union find
-
+ - modpow
