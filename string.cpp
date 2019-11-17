@@ -12,5 +12,3 @@ string replace(string target, string finder, string replacement){
 
   return result;
 }
-
-

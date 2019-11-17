@@ -47,4 +47,3 @@ template<class Abel> struct WeightedUnionFind {
         return weight(y) - weight(x);
     }
 };
-
