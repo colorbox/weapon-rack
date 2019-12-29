@@ -1,10 +1,6 @@
 int gcd(int a, int b){
   if(a==1 || b==1)return 1;
-  if (a < b) {
-    a ^= b;
-    b ^= a;
-    a ^= b;
-  }
+  if (a < b)swap(a,b);
   
   return b ? gcd(b, a % b) : a;
 }
