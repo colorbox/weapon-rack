@@ -1,20 +1,13 @@
 struct UnionFind {
-  vector<int> par, rank;
+  vector<int> data;
 
   UnionFind(int n){
-    par.resize(n+1);
-    fill(par.begin(), par.end(), -1);
-    rank.resize(n+1);
+    data.resize(n+1);
+    fill(data.begin(), data.end(), -1);
   }
 
   int root(int x){
-    if(par[x] < 0){
-      return x;
-    }
-
-    par[x] = root(par[x]);
-
-    return par[x];
+    return data[x] < 0 ? x : data[x] = root(data[x]);
   }
 
   void unite(int x, int y){
@@ -22,19 +15,18 @@ struct UnionFind {
     int ry=root(y);
 
     if(rx!=ry){
-      if(rank[rx] >= rank[ry]){
-        par[ry]=rx;
+      if(data[ry] < data[rx])swap(rx, ry);
 
-        if(rank[rx]==rank[ry]){
-          rank[rx] += 1;          
-        }
-      }else{
-        par[rx] = ry;
-      }
+      data[rx]+=data[ry];
+      data[ry]=rx;
     }
   }
 
   bool same(int x, int y){
     return root(x)==root(y);
+  }
+
+  int size(int x){
+    return -data[root(x)];
   }
 };
