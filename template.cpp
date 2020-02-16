@@ -5,6 +5,7 @@
 #define ll long long
 
 #define MOD 1000000007
+#define INF 1000000000000000LL
 
 using namespace std;
 
