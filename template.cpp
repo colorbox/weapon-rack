@@ -6,6 +6,8 @@
 #define rrep1(i,n) for(int i = (n); i > 0; i--)
 
 #define ll long long
+#define pi pair<int, int>
+#define pll pair<ll, ll>
 
 #define MOD 1000000007
 #define INF 1000000000000000LL
