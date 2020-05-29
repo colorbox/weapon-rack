@@ -29,5 +29,20 @@ ll comb(ll n, ll r){
   return result;
 }
 
+// nPr in  mod
+ll perm(ll n, ll r){
+  if(n<0 || n<r || r<0)return 0;
+  ll fn = fac(n);
+  ll fn_r = fac(n-r);
+  
+  ll d = modpow(fn_r, MOD-2, MOD);
+  ll u = fn%MOD;
+  
+  ll result = u * d % MOD;
+ 
+  return result;
+}
+
 facs[0]=1;
 rep(i, n+10)facs[i+1] = (facs[i]*(i+1))%MOD;
+
