@@ -1,5 +1,7 @@
+ll facs[MAXN];
+
 // x^n in mod
-ll modpow(ll x, ll n, ll mod){
+ll modpow(ll x, ll n, ll mod=MOD){
   if(n==0) return 1;
 
   if(n%2==0){
@@ -43,6 +45,11 @@ ll perm(ll n, ll r){
   return result;
 }
 
-facs[0]=1;
-rep(i, n+10)facs[i+1] = (facs[i]*(i+1))%MOD;
+ll homogeneous(ll n, ll r){
+  return comb(n+r-1, r);
+}
 
+void init(){
+  facs[0]=1;
+  rep(i, MAXN-1)facs[i+1] = (facs[i]*(i+1))%MOD;
+}
