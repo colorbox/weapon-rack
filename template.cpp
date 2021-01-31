@@ -9,6 +9,9 @@
 #define pi pair<int, int>
 #define pll pair<ll, ll>
 
+#define F first
+#define S second
+
 #define MOD 1000000007
 #define INF 1000000000000000LL
 
